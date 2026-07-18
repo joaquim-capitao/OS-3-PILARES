@@ -1,8 +1,12 @@
 # Os Três Pilares
 
-#os-três-pilares 
-
-
+<!-- Dentro do teu ficheiro index.html -->
+<script>
+  window.$docsify = {
+    loadSidebar: true,
+    subMaxLevel: 2
+  }
+</script>
 
 Introdução
 
