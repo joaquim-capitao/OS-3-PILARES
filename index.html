@@ -1,11 +1,19 @@
-<script>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Os Três Pilares</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app">A carregar...</div>
+  <script>
     window.$docsify = {
-      loadSidebar: true,
-      subMaxLevel: 2,
       homepage: 'index.md',
-      // Esta linha força o Docsify a encontrar a barra lateral na pasta correta:
-      alias: {
-        '/.*/_sidebar.md': '_sidebar.md'
-      }
+      loadSidebar: '_sidebar.md', // Aponta diretamente para o ficheiro correto
+      subMaxLevel: 2
     }
   </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
