@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leitor de Capítulos Markdown</title>
-  <!-- Biblioteca para converter Markdown para HTML -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
-      --bg-body: #fbfbfa;
-      --bg-sidebar: #f5f5f7;
-      --border-color: #e5e5ea;
-      --text-main: #242426;
-      --text-muted: #6e6e73;
-      --accent: #1d6fee;
-      --accent-soft: #eaf2fd;
+      /* Esquema de Leitura Editorial / Tons Quentes Confortáveis */
+      --bg-body: #fbf8f3;          /* Fundo tom papel natural quente */
+      --bg-sidebar: #f3efe6;       /* Barra lateral ligeiramente contrastada */
+      --border-color: #e5dec9;     /* Linhas subtis e quentes */
+      --text-main: #2b2725;        /* Carvão escuro suave (elimina fadiga visual) */
+      --text-muted: #797167;       /* Tom neutro para categorias e legendas */
+      --accent: #8b4513;           /* Terracota / Castanho sela elegante */
+      --accent-soft: #eae2d1;      /* Fundo suave para seleção ativa */
+      --code-bg: #ece5d8;          /* Fundo dos blocos de código */
       --sidebar-width: 280px;
       --header-mobile-height: 56px;
     }
@@ -52,6 +53,7 @@
     .mobile-header span {
       font-weight: 600;
       font-size: 1rem;
+      color: var(--text-main);
     }
 
     .menu-toggle-btn {
@@ -82,7 +84,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(43, 39, 37, 0.45);
       z-index: 900;
     }
 
@@ -106,7 +108,7 @@
       font-weight: 700;
       margin-bottom: 20px;
       padding-left: 8px;
-      color: #111;
+      color: var(--text-main);
       letter-spacing: -0.3px;
     }
 
@@ -143,7 +145,7 @@
     }
 
     .nav-item a:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, 0.04);
     }
 
     .nav-item.active a {
@@ -156,7 +158,11 @@
     .nav-item.sub-item a {
       padding-left: 24px;
       font-size: 0.88rem;
-      color: #444;
+      color: var(--text-muted);
+    }
+
+    .nav-item.sub-item.active a {
+      color: var(--accent);
     }
 
     /* Área de Leitura */
@@ -171,11 +177,11 @@
 
     .reading-container {
       width: 100%;
-      max-width: 720px;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 1.12rem;
-      line-height: 1.8;
-      color: #222;
+      max-width: 700px;
+      font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--text-main);
       word-wrap: break-word;
     }
 
@@ -186,7 +192,7 @@
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 24px;
-      color: #111;
+      color: var(--text-main);
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 12px;
     }
@@ -197,7 +203,7 @@
       font-weight: 600;
       margin-top: 36px;
       margin-bottom: 16px;
-      color: #1a1a1a;
+      color: var(--text-main);
     }
 
     .reading-container h3 {
@@ -206,18 +212,19 @@
       font-weight: 600;
       margin-top: 28px;
       margin-bottom: 12px;
+      color: var(--text-main);
     }
 
     .reading-container p {
-      margin-bottom: 1.4em;
+      margin-bottom: 1.5em;
     }
 
     .reading-container blockquote {
       border-left: 3px solid var(--accent);
-      padding-left: 16px;
-      margin: 24px 0;
+      padding-left: 18px;
+      margin: 26px 0;
       font-style: italic;
-      color: #555;
+      color: #524b45;
     }
 
     .reading-container ul, .reading-container ol {
@@ -230,18 +237,19 @@
     }
 
     .reading-container pre {
-      background: #f0f0f3;
+      background: var(--code-bg);
       padding: 16px;
       border-radius: 6px;
       font-family: "SFMono-Regular", Consolas, Menlo, monospace;
       font-size: 0.95rem;
       overflow-x: auto;
       margin: 20px 0;
+      border: 1px solid var(--border-color);
     }
 
     .reading-container code {
-      background: #f0f0f3;
-      padding: 2px 5px;
+      background: var(--code-bg);
+      padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.9em;
     }
@@ -249,13 +257,14 @@
     .reading-container pre code {
       background: transparent;
       padding: 0;
+      border: none;
     }
 
     .reading-container img {
       max-width: 100%;
       height: auto;
       border-radius: 6px;
-      margin: 20px 0;
+      margin: 24px 0;
       display: block;
     }
 
@@ -277,7 +286,7 @@
         top: 0;
         bottom: 0;
         height: 100vh;
-        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 2px 0 16px rgba(43, 39, 37, 0.12);
         transform: translateX(-100%);
       }
 
@@ -295,7 +304,7 @@
 
       .reading-container {
         font-size: 1.05rem;
-        line-height: 1.7;
+        line-height: 1.75;
       }
 
       .reading-container h1 {
@@ -307,24 +316,21 @@
       }
 
       .nav-item a {
-        min-height: 44px; /* Otimizado para toque */
+        min-height: 44px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra Superior no Mobile -->
   <header class="mobile-header">
     <span>Índice</span>
     <button class="menu-toggle-btn" aria-label="Abrir Menu" onclick="toggleMenu()">☰</button>
   </header>
 
-  <!-- Camada escura de fundo (fechar menu ao clicar) -->
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <div class="layout-container">
-    <!-- MENU DE NAVEGAÇÃO -->
     <nav class="sidebar" id="sidebar">
       <h2>Índice</h2>
       
@@ -365,16 +371,13 @@
       </div>
     </nav>
 
-    <!-- ÁREA DE LEITURA (CONTEÚDO DO MARKDOWN) -->
     <main class="main-content">
       <article id="conteudo-leitura" class="reading-container">
-        <!-- O texto Markdown renderizado entrará aqui automaticamente -->
-      </article>
+        </article>
     </main>
   </div>
 
   <script>
-    // Controlo do Menu Móvel (Abrir/Fechar)
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
@@ -382,18 +385,15 @@
       overlay.classList.toggle('active');
     }
 
-    // Função para carregar e converter o ficheiro Markdown
     async function carregarCapitulo(ficheiroMd, elementoClicado) {
       const contentDiv = document.getElementById('conteudo-leitura');
       contentDiv.innerHTML = '<p class="loading">A carregar capítulo...</p>';
 
-      // Atualizar classe 'active'
       document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
       if (elementoClicado) {
         elementoClicado.closest('.nav-item').classList.add('active');
       }
 
-      // No mobile, fecha o menu após selecionar um capítulo
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
       if (sidebar.classList.contains('open')) {
@@ -407,24 +407,19 @@
           throw new Error(`Erro ${response.status}`);
         }
         const markdownTexto = await response.text();
-        
-        // Converte Markdown -> HTML
         contentDiv.innerHTML = marked.parse(markdownTexto);
-        
-        // Rola até ao topo
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (erro) {
         contentDiv.innerHTML = `
           <h1>Erro ao carregar</h1>
           <p>Não foi possível encontrar ou ler o ficheiro <code>${ficheiroMd}</code>.</p>
-          <p style="font-size:0.95rem; color:#666;">
+          <p style="font-size:0.95rem; color:var(--text-muted);">
             Verifique se o nome do ficheiro está correto e se o ficheiro se encontra na raiz do repositório no GitHub Pages.
           </p>
         `;
       }
     }
 
-    // Carrega o primeiro capítulo automaticamente ao entrar
     window.addEventListener('DOMContentLoaded', () => {
       carregarCapitulo('capitulo-1.md', document.querySelector('.nav-item.active a'));
     });
