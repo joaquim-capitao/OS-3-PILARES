@@ -165,6 +165,17 @@
       color: var(--accent);
     }
 
+    /* Sub-sub-capítulos (3º nível) com recuo maior */
+    .nav-item.sub-sub-item a {
+      padding-left: 36px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .nav-item.sub-sub-item.active a {
+      color: var(--accent);
+    }
+
     /* Área de Leitura */
     .main-content {
       flex: 1;
@@ -505,6 +516,40 @@
         <ul class="nav-list">
           <li class="nav-item">
             <a onclick="carregarCapitulo('capitulo-3.md', this)">3. Religião</a>
+          </li>
+          <li class="nav-item sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-1.md', this)">3.1 O cenário religioso mundial</a>
+          </li>
+          <li class="nav-item sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-2.md', this)">3.2 A Cristandade</a>
+          </li>
+          <li class="nav-item sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3.md', this)">3.3 Testemunhas de Jeová</a>
+          </li>
+          <li class="nav-item sub-sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3-1.md', this)">3.3.1 O curso intensivo</a>
+          </li>
+          <li class="nav-item sub-sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3-2.md', this)">3.3.2 A remoção</a>
+          </li>
+          <li class="nav-item sub-sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3-3.md', this)">3.3.3 A Questão do Sangue</a>
+          </li>
+          <li class="nav-item sub-sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3-4.md', this)">3.3.4 Mitos</a>
+          </li>
+          <li class="nav-item sub-sub-item">
+            <a onclick="carregarCapitulo('capitulo-3-3-5.md', this)">3.3.5 A esperança</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Conclusão -->
+      <div class="nav-group">
+        <div class="nav-group-title">Finalização</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a onclick="carregarCapitulo('conclusao.md', this)">Conclusão</a>
           </li>
         </ul>
       </div>
