@@ -1,0 +1,9 @@
+### **1.9 - Deus só existe na nossa cabeça?**
+
+Será que Deus existe apenas na cabeça dos humanos? Para responder a isso, tomemos como exemplo algo muito concreto com o qual lidamos no nosso dia a dia: as cores. Será que existe a cor azul? "É claro que existe o azul", diriam alguns. Mas a resposta não é assim tão simples. É verdade que nós vemos objetos de cor azul. No entanto, alguém poderia afirmar, com uma certa razão, que tanto o azul como qualquer outra cor só existe dentro da nossa cabeça. O que realmente existe é a luz, a qual é refletida em cada objeto de forma diferente. A retina transmite os sinais recebidos ao nervo ótico que, por sua vez, comunica com o cérebro.
+
+Imagine que a espécie humana se extingue. Continuariam a existir cores? Alguém pode dizer que não. Afinal, as cores são apenas um conceito humano para descrever o comportamento da luz refletida nos objetos. Morrendo a humanidade, morreria também o conceito de cor.
+
+Mas alguém poderia argumentar que, independentemente da perceção dos humanos, a luz comporta-se da mesma maneira. Se os humanos se extinguissem, deixaria de existir o conceito de cor, mas as cores continuariam a existir. Portanto, tudo depende do ponto de vista.
+
+O mesmo se aplica à existência de Deus. Como já referi, a palavra "Deus" é um conceito humano usado para descrever a Causa Primária do universo. Se os humanos deixassem de existir, “Deus” enquanto conceito, deixaria de existir. Mas assim como a luz se comporta da mesma maneira independentemente de existirem humanos, a Causa Primária de todas as coisas continua a ser uma realidade, quer existam humanos para pensar nela, quer não.
